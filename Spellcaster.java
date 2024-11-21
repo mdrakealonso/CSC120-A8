@@ -91,6 +91,7 @@ public class Spellcaster implements Contract {
     /**
      * Allows a Spellcaster to drop an Item from their inventory, provided it's contained in there
      * @param item an Item with name and ItemType
+     * @return the name of the dropped Item
      */
     public String drop(Item item) {
         if(!inventory.contains(item.getName())) {
@@ -166,17 +167,13 @@ public class Spellcaster implements Contract {
         if (energy == 0) {
             System.out.println(name + "'s energy is too low. Take it easy for now.");
             return false;
-        }
-        if (direction.equalsIgnoreCase("north")) {
+        } if (direction.equalsIgnoreCase("north")) {
             positionY ++;
-        }
-        else if (direction.equalsIgnoreCase("east")) {
+        } else if (direction.equalsIgnoreCase("east")) {
             positionX ++;
-        }
-        else if (direction.equalsIgnoreCase("south")) {
+        } else if (direction.equalsIgnoreCase("south")) {
             positionY --;
-        }
-        else if (direction.equalsIgnoreCase("west")) {
+        } else if (direction.equalsIgnoreCase("west")) {
             positionX --;
         } else {
             System.out.println(name + " doesn't understand this direction. Poor " + name + ".");
